@@ -1,0 +1,12 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "admin",
+            "email": "admin@example.com",
+            "password": "1234",
+            "avatar": "https://api.dicebear.com/9.x/identicon/svg?seed=admin",
+            "GamePoints": 0
+        }
+    ]
+}
