@@ -1,7 +1,7 @@
 <template>
   <section class="WeeklyChallenge">
     <h2>Weakly Challenge </h2>
-    <p>Here all CHallenge you can realase during this week.</p>
+    <p>Here all Challenge you can realase during this week.</p>
   </section>
 </template>
 

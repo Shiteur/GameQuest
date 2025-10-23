@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="main">
-            <img src="../assets/logo_GameQuest.png" alt="Logo de Game Quest"/>
+            <RouterLink to="/"><img src="../assets/logo_GameQuest.png" alt="Logo de Game Quest"/></RouterLink>
             <h1>Game Quest</h1>
         </div>
 
@@ -47,7 +47,7 @@ export default{
   },
   computed:{
     filteredgames(){
-      return this.games.filter(game => game.name.toLowerCase().includes(this.query.toLowerCase()));
+      return this.games.filter(game => game.name.toLowerCase().includes(this.query.toLowerCase()) || game.shortName.toLowerCase().includes(this.query.toLowerCase()));
     }
   },
   methods:{
