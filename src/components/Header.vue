@@ -14,7 +14,10 @@
         </nav>
 
         <div class="search">
-            <input type="text" placeholder="search"/>
+            <input type="text" v-model="query" placeholder="Search a game..."/>
+            <ul v-if="filteredgames.length && query">
+              <li v-for="(game, i) in filteredgames" :key="i" @click="goToGame(game.path)"> {{ game.name }}</li>
+            </ul>
         </div>
         <div class="sign">
             <RouterLink v-if="!user" to="/login">Connection</RouterLink>
@@ -24,11 +27,15 @@
 </template>
 
 <script>
+import games from '@/data/games.json'
+
 export default{
   name: "Header",
   data(){
     return{
-      user:null
+      user:null,
+      query: "",
+      games
     }
   },
   created(){
@@ -38,11 +45,20 @@ export default{
   beforeUnmount() {
     window.removeEventListener('storage', this.loadUser)
   },
+  computed:{
+    filteredgames(){
+      return this.games.filter(game => game.name.toLowerCase().includes(this.query.toLowerCase()));
+    }
+  },
   methods:{
     loadUser(){
       const storedUser = localStorage.getItem('currentUser')
       
       this.user = storedUser ? JSON.parse(storedUser) : null
+    },
+    goToGame(path){
+      this.$router.push(path);
+      this.query="";
     }
   }
 }
@@ -77,6 +93,27 @@ a {
 a.router-link-active {
   font-weight: bold;
   color: #029797;
+}
+.search {
+  position: relative;
+}
+.search ul {
+  position: absolute;
+  background: white;
+  color: black;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.search li {
+  padding: 0.4rem;
+  cursor: pointer;
+}
+.search li:hover {
+  background: #eee;
 }
 .search input {
   padding: 5px;
