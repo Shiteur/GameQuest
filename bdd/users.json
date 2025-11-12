@@ -1,12 +1,28 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "username": "admin",
-            "email": "admin@example.com",
-            "password": "1234",
-            "avatar": "https://api.dicebear.com/9.x/identicon/svg?seed=admin",
-            "GamePoints": 0
-        }
-    ]
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "email": "admin@example.com",
+      "password": "1234",
+      "avatar": "https://api.dicebear.com/9.x/identicon/svg?seed=admin",
+      "GamePoints": 0
+    },
+    {
+      "id": "8aeb",
+      "username": "EFREI",
+      "email": "user.efrei@efrei.net",
+      "password": "azer",
+      "avatar": "https://api.dicebear.com/9.x/identicon/svg?seed=EFREI",
+      "GamePoints": 0
+    },
+    {
+      "id": "037c",
+      "username": "Gaspard",
+      "email": "Gaga@gmail.com",
+      "password": "12345",
+      "avatar": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE8AAABrCAYAAAA2Cd+mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAS+SURBVHhe7Z1NaJsFHMaTla5dW2dho24Hwd1WQVjVQ8FLET9ih5LJGHW7BHaxyqQ4JgtTKepwODaKsq4XYTCYGnUriGPu0l10PS092SGMFb9a2k67Oms/bONBcngek/ejTzRVnx/08PxD07wPf37kzZt3S2ZzmcLW5nsTcZj5dZpHsWhu3MyjfxXF41/HD5joJEttnrpZDG/aS0+8CVnljQvdPIoFv76ox+/NE3B5Ai5PIJnNZQobajfwXOL1Xad5BHxyvJNHscjnxyEfPZeHzKhOLIc3T8DlCbg8gUjOm5qY4RHwXvcHkFWnqYQ5Ma4Dyx2/N0/A5Qm4PIFkNpcp3Lm1wPNA1prjwghzIHPg9HM8Kok3T8DlCbg8gVU5r/EjdMjDOxsgrzXCnMfO3n3oImR2YNOmukTCm6fh8gRcnkBJ5/H7OObI3jYeAW1tW3n0j8KOCyPs9bID3738WiLhzdNweQIuTyCZzWUKb+85A8Pe9i7ITO/wh5DDHMiEOSaMuE4LI+z1sPNOXHolkfDmabg8AZcnUJXy8vlx6afaTM9OJqZnJ6tT3n8Flyfg8gSS2VymwMO6k/OQ1fd11Sbs8zuGvcq/n81lEglvnobLE3B5AiWdF3auu9YcyE5iKuU4xpsn4PIEXJ5ASecx7EDmcEcHj4Bvkrd5VFXODwU7spzjGG+egMsTcHkCkZzHFPrHID+9837IjxzqhzzQNwj5gaXLkA9+/jXkE/R8Z09dg6wyMDYMOarjGG+egMsTcHkCf4vzTs3gfR0nDxyFfOPsy5DjojrQzlsDuDwBlycQyXm3p36BvG/uHsitrdsgx2V09CaPAonrPNVxfPwNG/2dZBmXJ+DyBCI5b/o7vN/07ha872LXRDPkMAfGddxndO7L3Jfugfx8TxpyXMcx5Y7fmyfg8gRcnsCqnMfU1tdA/umHWcgdLS9CHhvsg8wcu3IF8qXBEcjMjvbtkLdsqYdcaecV8eYJuDwBlycQyXlLC4uQvx+dgnzXpkbID9WgY9JdKcgddJ23eduzkOd/vgp5ZPgCZHZgbx++z+vtQaem0jsgx3VgueP35gm4PAGXJxDJeQw74NqnP0Le0xF8rtndjddtmat5/Pf32HmpDDrrzLEByCPD1yGrzmOKx+/NE3B5Ai5PoKTzRr+Y5FEgK8srkL+9jtdt2VntT70DmQl7n1dt5xXx5gm4PAGXJ5DM5jKFuI4LY/B9vCf/y+MvQOZrHI++9RVkhp3HsANT2/Fcuucw3keS3o/3ZbQ+2QI5Kt48AZcn4PIEkun9nX95n6cycWMOMn/HOMx5rz5Y+ppBkd39QzwKJNX1GOT6xvWQmagO9OYJuDwBlyewKuc11DVBnlu4A5kfP9efg8zsPXIQ8ng++LssQxfPQ+7c9zjkleXgQ1KdV/w/k7x5Ai5PwOUJrMp59evx87rlwjLkpSW8xlFbi475eADvRYvLMxk8d12c/z0wNzXjd1fW1QTvTJjzNm/88/HgZzGBuDwBlydQkc/z2IHzi79BVuFrJOys2Vt4Ll1px5Uj+FlNIC5PwOUJVOS6bbUJcyKzWscxwX/FBOLyBFyeQEnnxaXajqyUw+LizRNweQIuT6Aizvu/8gfS0ddza8+hsQAAAABJRU5ErkJggg==",
+      "GamePoints": 0
+    }
+  ]
 }

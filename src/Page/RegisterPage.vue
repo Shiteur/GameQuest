@@ -48,12 +48,12 @@ export default {
             const response = await fetch('http://localhost:3000/users')
             const users = await response.json()
             if (users.find(u => u.username === this.username)) {
-                this.error = "Ce nom d'utilisateur existe déjà."
+                this.error = "This username is already taken."
                 return
             }
 
-            if (this.password !== this.confirmPassword) {
-                this.error = "Les mots de passe ne correspondent pas."
+            if (this.password !== this.confirmpassword) {
+                this.error = "Passwords do not match." + this.confirmpassword + this.password
                 return
             }
 

@@ -5,14 +5,6 @@
             <h1>Game Quest</h1>
         </div>
 
-        <nav class="nav">
-            <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/game/LeagueOfLegends">League of Legends</RouterLink>
-            <RouterLink to="/game/TeamFightTactics">Teamfight Tactics</RouterLink>
-            <RouterLink v-if="!user" to="/login">Connection</RouterLink>
-            <RouterLink v-if="!user" to="/register">Register</RouterLink>
-        </nav>
-
         <div class="search">
             <input type="text" v-model="query" placeholder="Search a game..."/>
             <ul v-if="filteredgames.length && query">
@@ -81,10 +73,6 @@ header {
 .main img {
   width: 80px;
   height: 80px;
-}
-nav {
-  display: flex;
-  gap: 1rem;
 }
 a {
   color: #02f7f7;

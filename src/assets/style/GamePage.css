@@ -33,7 +33,7 @@ h2 {
 .content p {
   margin: 0;
   line-height: 1.55;
-  color: #e6e7ee;
+  color: #252525;
   font-size: 0.98rem;
   background: rgba(255, 255, 255, 0);
   padding: 10px 12px;
@@ -42,7 +42,7 @@ h2 {
 section > h3 {
   margin: 14px 0;
   font-size: 1.15rem;
-  color: #dfe3ff;
+  color: #b700ff;
   letter-spacing: 0.2px;
 }
 section:last-of-type {
