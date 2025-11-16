@@ -45,7 +45,7 @@ export default {
     },
     methods: {
         async registerUser() {
-            const response = await fetch('http://localhost:3000/users')
+            const response = await fetch('http://localhost:4000/users')
             const users = await response.json()
             if (users.find(u => u.username === this.username)) {
                 this.error = "This username is already taken."
@@ -59,7 +59,7 @@ export default {
 
             const defaultAvatar= `https://api.dicebear.com/9.x/identicon/svg?seed=${this.username}`
 
-            await fetch('http://localhost:3000/users', {
+            await fetch('http://localhost:4000/users', {
                 method: 'POST',headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({username: this.username,email: this.email,password: this.password,avatar: defaultAvatar, GamePoints: 0})
             })

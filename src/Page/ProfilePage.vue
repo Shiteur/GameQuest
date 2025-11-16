@@ -27,7 +27,7 @@ export default {
   },
   async created() {
     const id = this.$route.params.id
-    const res = await fetch(`http://localhost:3000/users/${id}`)
+    const res = await fetch(`http://localhost:4000/users/${id}`)
     this.user = await res.json()
 
     // Load current user from localStorage
@@ -45,7 +45,7 @@ export default {
       reader.onload = async () => {
         this.user.avatar = reader.result
 
-        await fetch(`http://localhost:3000/users/${this.user.id}`, {
+        await fetch(`http://localhost:4000/users/${this.user.id}`, {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ avatar: this.user.avatar })
@@ -66,7 +66,7 @@ export default {
       }
 
       try { 
-        await fetch(`http://localhost:3000/users/${this.user.id}`, {
+        await fetch(`http://localhost:4000/users/${this.user.id}`, {
           method: 'DELETE'
         })
 

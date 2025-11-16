@@ -1,0 +1,16 @@
+{
+    "challenges": [
+    { "id": 1, "game": "TeamfightTactics", "title": "Push over the end", "description": "Reach level 10 in a game.", "points": 5},
+    { "id": 2, "game": "TeamfightTactics", "title": "Unstoppable", "description": "Make three first place game in a row.", "points": 15},
+    { "id": 3, "game": "TeamfightTactics", "title": "One Cost Carry", "description": "Make a four-star champion without power up Final Form.", "points": 30},
+    { "id": 4, "game": "TeamfightTactics", "title": "Unbeliveble", "description": "Make a three-star 5 cost champion.", "points": 35},
+    { "id": 5, "game": "TeamfightTactics", "title": "Prisma Final", "description": "Make a prismatic trait.", "points": 35},
+    { "id": 6, "game": "TeamfightTactics", "title": "Perfect Game", "description": "Make a perfect game (no losses).", "points": 40},
+    { "id": 7, "game": "LeagueOfLegends", "title": "All in one", "description": "Win one game at each position", "points": 5},
+    { "id": 8, "game": "LeagueOfLegends", "title": "Jungle diff", "description": "Steal 10 neutral monsters.", "points": 10},
+    { "id": 9, "game": "LeagueOfLegends", "title": "What is loser queue?", "description": "Win 5 games in a row", "points": 20},
+    { "id": 10, "game": "LeagueOfLegends", "title": "Pentakiller", "description": "Make a pentakill", "points": 30},
+    { "id": 11, "game": "LeagueOfLegends", "title": "Early win", "description": "Win a game before 20 minutes without ff.", "points": 35},
+    { "id": 12, "game": "LeagueOfLegends", "title": "Perfect KDA", "description": "Win a game without dying and more than 10 kills or assists.", "points": 40}
+  ]
+}
