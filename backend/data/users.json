@@ -31,6 +31,14 @@
       "password": "123",
       "avatar": "https://api.dicebear.com/9.x/identicon/svg?seed=xeto",
       "GamePoints": 0
+    },
+    {
+      "id": "dc6311ac-73ad-456c-92ce-4a0349c8c067",
+      "username": "slifos",
+      "email": "slifos@gmail.com",
+      "password": "123",
+      "avatar": "https://api.dicebear.com/9.x/identicon/svg?seed=slifos",
+      "GamePoints": 0
     }
   ]
 }
