@@ -19,6 +19,7 @@
 import { computed, onMounted, watch, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import ChallengeListGame from '@/components/ChallengeListGame.vue'
+import '@/style/game-page.css'
 
 export default {
   name: 'GamePage',
@@ -76,14 +77,4 @@ export default {
 </script>
 
 <style scoped>
-.status {
-  margin: 24px 0;
-  padding: 12px 16px;
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.04);
-}
-.status.error {
-  color: #b4002a;
-  background: rgba(255, 0, 58, 0.08);
-}
 </style>

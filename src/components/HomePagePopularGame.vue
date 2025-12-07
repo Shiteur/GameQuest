@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import '@/style/popular-game.css'
+
 export default {
   data() {
     return {
@@ -43,46 +45,4 @@ export default {
 </script>
 
 <style scoped>
-.PopularGame {
-  padding: 3rem;
-  text-align: center;
-}
-.games{
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  padding: 18px;
-  border-radius: 10px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
-  box-shadow: 0 6px 18px rgba(11,10,20,0.45);
-}
-.games a {
-  text-decoration: none;
-  flex: 1;
-  min-width: 200px;
-  background: rgba(255, 255, 255, 0);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 12px;
-  border-radius: 6px;
-}
-.games a:hover {
-  box-shadow: 0 6px 18px rgba(11,10,20,0.45);
-}
-.games img {
-  width: 40%;
-  border-radius: 10px;
-}
-.games p {
-
-  margin: 0;
-  line-height: 1.55;
-  color: #008ecf;
-  font-size: 0.98rem;
-  background: rgba(255,255,255,0.01);
-  padding: 10px 12px;
-  border-radius: 6px;
-}
 </style>

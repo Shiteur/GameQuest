@@ -10,6 +10,7 @@
 import WeeklyChallenge from '../components/HomePageWeeklyChallenge.vue'
 import LeaderBoard from '../components/HomePageLeaderBoard.vue'
 import PopularGame from '../components/HomePagePopularGame.vue'
+import '@/style/home.css'
 
 export default {
     name: 'HomePage',
@@ -22,8 +23,4 @@ export default {
 </script>
 
 <style scoped>
-.home {
-  text-align: center;
-  padding: 3rem;
-}
 </style>

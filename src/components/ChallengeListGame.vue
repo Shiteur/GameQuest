@@ -1,19 +1,22 @@
 <template>
     <section class="challenge">
         <h3>Challenges</h3>
-        <div v-for="(challenge, index) in challenges":key="index" class="challenges">
-            <h4>{{ challenge.title }}</h4>
-            <p>{{ challenge.description }}</p>
-            <p>+{{ challenge.points }} Game Points</p>
-            <button class="btn" :disabled="!user" @click="validate(challenge)">Validate</button>
-            <p v-if="!user" class="warning"> You need to login before validate a challenge.</p>
-        </div>
+        <ChallengeCard
+          v-for="(challenge, index) in challenges"
+          :key="challenge.id || index"
+          :challenge="challenge"
+          :user="user"
+          @user-updated="onUserUpdated"
+        />
     </section>
 </template>
 
 <script>
+import ChallengeCard from '@/components/ChallengeCard.vue'
+
 export default {
     name: 'ChallengeListGame',
+    components: { ChallengeCard },
     props: {
         game: {
             type: String,
@@ -36,30 +39,22 @@ export default {
     },
     methods: {
         async fetchChallenges(){
-            const ans = await fetch(`http://localhost:3001/challenges?game=${this.game}`)
-            this.challenges = await ans.json()
-        },
-        // For testing the good work later a true fonction with add point to the user.
-        validate(challenge) {
-            if (!this.user) {
-                alert('You need to login before validate a challenge.')
-                this.$router.push('/login')
-                return
+            try {
+                const ans = await fetch(`http://localhost:4000/challenges?game=${encodeURIComponent(this.game)}`)
+                if (!ans.ok) {
+                    console.error('Impossible de charger les défis')
+                    return
+                }
+                this.challenges = await ans.json()
+            } catch (err) {
+                console.error('Erreur réseau lors du chargement des défis', err)
             }
-
-            alert(`Challenge "${challenge.title}" validé !`)
+        },
+        onUserUpdated(updated) {
+            this.user = updated
         }
     }
 }
 </script>
 <style scoped>
-.btn:disabled {
-  background-color: gray;
-  cursor: not-allowed;
-}
-
-.warning {
-  color: red;
-  font-size: 0.9rem;
-}
 </style>

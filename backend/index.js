@@ -18,6 +18,7 @@ app.use(express.json())
 const DATA_DIR = path.resolve('data')
 const USERS_PATH = path.join(DATA_DIR, 'users.json')
 const GAMES_PATH = path.join(DATA_DIR, 'games.json')
+const CHALLENGES_PATH = path.join(DATA_DIR, 'challenges.json')
 
 const normalizeKey = value =>
   String(value || '')
@@ -35,6 +36,12 @@ const readGames = async () => {
   const raw = await readFile(GAMES_PATH, 'utf-8')
   const data = JSON.parse(raw)
   return data.games || []
+}
+
+const readChallenges = async () => {
+  const raw = await readFile(CHALLENGES_PATH, 'utf-8')
+  const data = JSON.parse(raw)
+  return data.challenges || []
 }
 
 app.get('/health', (req, res) => {
@@ -151,6 +158,22 @@ app.get('/games', async (req, res) => {
   } catch (err) {
     console.error(err)
     res.status(500).json({ error: 'Impossible de lire games.json' })
+  }
+})
+
+app.get('/challenges', async (req, res) => {
+  try {
+    const { game } = req.query
+    const challenges = await readChallenges()
+    if (!game) {
+      return res.json(challenges)
+    }
+    const key = normalizeKey(game)
+    const filtered = challenges.filter(ch => normalizeKey(ch.game) === key)
+    res.json(filtered)
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: 'Impossible de lire challenges.json' })
   }
 })
 

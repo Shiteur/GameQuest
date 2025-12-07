@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import '@/style/profile.css'
+
 export default {
   name: "ProfileView",
   data() {
@@ -84,17 +86,4 @@ export default {
 </script>
 
 <style scoped>
-.profile {
-  padding: 2rem;
-  background-color: #f9f9f9;
-  border-radius: 1rem;
-  max-width: 500px;
-  margin: auto;
-}
-.avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-}
 </style>

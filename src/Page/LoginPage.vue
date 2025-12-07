@@ -22,6 +22,8 @@
 </template>
 
 <script>
+import '@/style/login.css'
+
 export default {
   name: 'LoginPage',
   data() {
@@ -56,35 +58,4 @@ export default {
 </script>
 
 <style scoped>
-.login {
-  max-width: 400px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background: #f9f9f9;
-  border-radius: 1rem;
-}
-.login label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-.login input {
-  width: 100%;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-}
-.error {
-  color: red;
-  margin-bottom: 1rem;
-}
-button {
-  background-color: #4a90e2;
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #357ab7;
-}
 </style>
