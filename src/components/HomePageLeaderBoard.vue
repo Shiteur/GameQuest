@@ -1,12 +1,8 @@
 <template>
   <section class="LeaderBoard">
-    <h2>Leader Board</h2>
-    <h3>Day</h3>
-    <p>Here the Leader Board of Game Quest for {{day}}.</p>
-    <h3>Week</h3>
+    <h2>Leader Board of the Week</h2>
     <p>Here the Leader Board of Game Quest for {{ startWeek }} to {{ endWeek }}.</p>
-    <h3>Month</h3>
-    <p>Here the Leader Board of Game Quest for {{month}}.</p>
+
   </section>
 </template>
 

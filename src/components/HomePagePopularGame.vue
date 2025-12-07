@@ -3,14 +3,43 @@
     <h2>Popular Game</h2>
     <p>You can fond the most popular game of Game Quest's user.</p>
     <div class="games">
-      <RouterLink to="/game/LeagueOfLegends"><img src="https://wiki.leagueoflegends.com/en-us/images/thumb/Season_2024_Promo_01.jpg/800px-Season_2024_Promo_01.jpg?c6d35"/><p>League of Legends</p></RouterLink>
-      <RouterLink to="/game/TeamFightTactics"><img src="https://raiseyourgame.com/wp-content/uploads/2022/08/Andy_Teamfight_Podcast_Optional_Featured_sm_792x447.jpg"/><p>Teamfight Tactics</p></RouterLink>
+      <RouterLink
+        v-for="(game, index) in firstGames"
+        :key="index"
+        :to="game.path || `/game/${game.slug}`"
+      >
+        <img :src="game.icon" :alt="`${game.name} cover`" />
+        <p>{{ game.name }}</p>
+      </RouterLink>
     </div>
   </section>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      games: []
+    }
+  },
+  computed: {
+    firstGames() {
+      return this.games.slice(0, 15)
+    }
+  },
+  async created() {
+    try {
+      const res = await fetch('http://localhost:4000/games')
+      if (!res.ok) {
+        console.error('Impossible de charger les jeux populaires')
+        return
+      }
+      this.games = await res.json()
+    } catch (err) {
+      console.error('Erreur réseau lors du chargement des jeux', err)
+    }
+  }
+}
 </script>
 
 <style scoped>

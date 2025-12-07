@@ -19,20 +19,19 @@
 </template>
 
 <script>
-import games from '@/data/games.json'
-
 export default{
   name: "Header",
   data(){
     return{
       user:null,
       query: "",
-      games
+      games: []
     }
   },
-  created(){
+  async created(){
     this.loadUser()
-     window.addEventListener('storage', this.loadUser)
+    await this.fetchGames()
+    window.addEventListener('storage', this.loadUser)
   },
   beforeUnmount() {
     window.removeEventListener('storage', this.loadUser)
@@ -47,6 +46,18 @@ export default{
       const storedUser = localStorage.getItem('currentUser')
       
       this.user = storedUser ? JSON.parse(storedUser) : null
+    },
+    async fetchGames() {
+      try {
+        const res = await fetch('http://localhost:4000/games')
+        if (!res.ok) {
+          console.error('Impossible de charger la liste des jeux.')
+          return
+        }
+        this.games = await res.json()
+      } catch (err) {
+        console.error('Erreur reseau lors du chargement des jeux', err)
+      }
     },
     goToGame(path){
       this.$router.push(path);

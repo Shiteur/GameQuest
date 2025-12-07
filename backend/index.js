@@ -17,6 +17,12 @@ app.use(express.json())
 
 const DATA_DIR = path.resolve('data')
 const USERS_PATH = path.join(DATA_DIR, 'users.json')
+const GAMES_PATH = path.join(DATA_DIR, 'games.json')
+
+const normalizeKey = value =>
+  String(value || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '')
 
 const readUsers = async () => {
   const raw = await readFile(USERS_PATH, 'utf-8')
@@ -24,6 +30,12 @@ const readUsers = async () => {
 }
 
 const writeUsers = data => writeFile(USERS_PATH, JSON.stringify(data, null, 2))
+
+const readGames = async () => {
+  const raw = await readFile(GAMES_PATH, 'utf-8')
+  const data = JSON.parse(raw)
+  return data.games || []
+}
 
 app.get('/health', (req, res) => {
   res.json({ status: 'ok' })
@@ -114,6 +126,31 @@ app.delete('/users/:id', async (req, res) => {
   } catch (err) {
     console.error(err)
     res.status(500).json({ error: "Impossible de supprimer l'utilisateur" })
+  }
+})
+
+app.get('/games', async (req, res) => {
+  try {
+    const games = await readGames()
+    const { slug, name } = req.query
+
+    if (slug || name) {
+      const needle = normalizeKey(slug || name)
+      const game = games.find(g => {
+        const gameSlug = normalizeKey(g.slug)
+        const gameName = normalizeKey(g.name)
+        return gameSlug === needle || gameName === needle
+      })
+      if (!game) {
+        return res.status(404).json({ error: 'Jeu introuvable.' })
+      }
+      return res.json(game)
+    }
+
+    res.json(games)
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: 'Impossible de lire games.json' })
   }
 })
 
