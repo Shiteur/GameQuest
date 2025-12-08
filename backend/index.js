@@ -54,21 +54,21 @@ app.get('/users', async (req, res) => {
     res.json(data.users)
   } catch (err) {
     console.error(err)
-    res.status(500).json({ error: 'Impossible de lire users.json' })
+    res.status(500).json({ error: "Can't read users.json" })
   }
 })
 
 app.post('/users', async (req, res) => {
   const { username, email, password } = req.body
   if (!username || !email || !password) {
-    return res.status(400).json({ error: 'Champs manquants' })
+    return res.status(400).json({ error: 'Missing fields' })
   }
 
   try {
     const data = await readUsers()
 
     if (data.users.some(u => u.username === username)) {
-      return res.status(400).json({ error: "Nom d'utilisateur déjà pris" })
+      return res.status(400).json({ error: "Username already taken" })
     }
 
     const newUser = {
@@ -86,7 +86,7 @@ app.post('/users', async (req, res) => {
     res.status(201).json(newUser)
   } catch (err) {
     console.error(err)
-    res.status(500).json({ error: "Impossible d'ajouter l'utilisateur" })
+    res.status(500).json({ error: "Unable to add user" })
   }
 })
 
@@ -95,12 +95,12 @@ app.get('/users/:id', async (req, res) => {
     const data = await readUsers()
     const user = data.users.find(u => u.id === req.params.id)
     if (!user) {
-      return res.status(404).json({ error: 'Utilisateur introuvable' })
+      return res.status(404).json({ error: 'User not found' })
     }
     res.json(user)
   } catch (err) {
     console.error(err)
-    res.status(500).json({ error: 'Impossible de lire users.json' })
+    res.status(500).json({ error: "Can't read users.json" })
   }
 })
 
@@ -109,14 +109,14 @@ app.patch('/users/:id', async (req, res) => {
     const data = await readUsers()
     const index = data.users.findIndex(u => u.id === req.params.id)
     if (index === -1) {
-      return res.status(404).json({ error: 'Utilisateur introuvable' })
+      return res.status(404).json({ error: 'User not found' })
     }
     data.users[index] = { ...data.users[index], ...req.body }
     await writeUsers(data)
     res.json(data.users[index])
   } catch (err) {
     console.error(err)
-    res.status(500).json({ error: "Impossible de mettre à jour l'utilisateur" })
+    res.status(500).json({ error: "Unable to update user" })
   }
 })
 
@@ -126,13 +126,13 @@ app.delete('/users/:id', async (req, res) => {
     const initialLength = data.users.length
     data.users = data.users.filter(u => u.id !== req.params.id)
     if (data.users.length === initialLength) {
-      return res.status(404).json({ error: 'Utilisateur introuvable' })
+      return res.status(404).json({ error: 'User not found' })
     }
     await writeUsers(data)
     res.status(204).send()
   } catch (err) {
     console.error(err)
-    res.status(500).json({ error: "Impossible de supprimer l'utilisateur" })
+    res.status(500).json({ error: "Unable to delete user" })
   }
 })
 
@@ -149,7 +149,7 @@ app.get('/games', async (req, res) => {
         return gameSlug === needle || gameName === needle
       })
       if (!game) {
-        return res.status(404).json({ error: 'Jeu introuvable.' })
+        return res.status(404).json({ error: 'Game not found.' })
       }
       return res.json(game)
     }
@@ -157,7 +157,7 @@ app.get('/games', async (req, res) => {
     res.json(games)
   } catch (err) {
     console.error(err)
-    res.status(500).json({ error: 'Impossible de lire games.json' })
+    res.status(500).json({ error: "Can't read games.json" })
   }
 })
 
@@ -173,7 +173,7 @@ app.get('/challenges', async (req, res) => {
     res.json(filtered)
   } catch (err) {
     console.error(err)
-    res.status(500).json({ error: 'Impossible de lire challenges.json' })
+    res.status(500).json({ error: "Can't read challenges.json" })
   }
 })
 

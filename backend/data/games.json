@@ -3,14 +3,14 @@
     {
       "slug": "TeamFightTactics",
       "name": "Teamfight Tactics",
-      
+      "shortName": "TFT",
       "icon": "https://raiseyourgame.com/wp-content/uploads/2022/08/Andy_Teamfight_Podcast_Optional_Featured_sm_792x447.jpg",
       "description": "Teamfight Tactics (TFT) is an auto battler game developed and published by Riot Games. Players draft, deploy, and upgrade a team of champions to battle against seven other players in a free-for-all match. The last player standing wins the game."
     },
     {
       "slug": "LeagueOfLegends",
       "name": "League Of Legends",
-      
+      "shortName": "LoL",
       "icon": "https://wiki.leagueoflegends.com/en-us/images/thumb/Season_2024_Promo_01.jpg/800px-Season_2024_Promo_01.jpg?c6d35",
       "description": "League of Legends (LoL) is a multiplayer online battle arena-type video game (MOBA) developed by Riot Games. Two teams of five players compete to destroy the opposing base by controlling champions with unique skills, by coordinating their actions and adapting their strategy in real time. The game stands out for its strategic depth, its regular updates and a global competitive scene. Free of access, LoL offers a wide variety of champions, of objects and roles to suit all styles of play."
     },

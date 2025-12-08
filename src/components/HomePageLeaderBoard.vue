@@ -38,7 +38,7 @@ export default {
       try {
         const res = await fetch('http://localhost:4000/users')
         if (!res.ok) {
-          console.error('Impossible de charger le classement')
+          console.error('Unable to load ranking')
           return
         }
         const users = await res.json()
@@ -47,7 +47,7 @@ export default {
           .sort((a, b) => b.GamePoints - a.GamePoints)
           .slice(0, 5)
       } catch (err) {
-        console.error('Erreur réseau lors du chargement du classement', err)
+        console.error('Network error while loading ranking', err)
       }
     },
     updateDate() {
