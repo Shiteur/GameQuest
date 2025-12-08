@@ -42,3 +42,30 @@ button:last-of-type {
 input[type="file"] {
   display: none;
 }
+
+/* Rank styles */
+.rank-first {
+  color: gold;
+  font-weight: bold;
+}
+
+.rank-second {
+  color: silver;
+  font-weight: bold;
+}
+
+.rank-third {
+  color: #cd7f32;
+  font-weight: bold;
+}
+
+.rank-top10 {
+  
+  color: lightgreen;
+  font-weight: bold;
+}
+
+.rank-other {
+  color: #777;
+  font-weight: bold;
+}

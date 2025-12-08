@@ -177,6 +177,35 @@ app.get('/challenges', async (req, res) => {
   }
 })
 
+app.get('/users/:id/rank', async (req, res) => {
+  try {
+    const data = await readUsers()
+    const users = data.users
+
+    // Sort users by descending score
+    const sorted = users
+      .filter(u => typeof u.GamePoints === 'number')
+      .sort((a, b) => b.GamePoints - a.GamePoints)
+
+    // Find the user's position
+    const index = sorted.findIndex(u => u.id === req.params.id)
+
+    if (index === -1) {
+      return res.status(404).json({ error: 'User not found' })
+    }
+
+    res.json({
+      id: req.params.id,
+      rank: index + 1,
+      totalUsers: sorted.length,
+      user: sorted[index]
+    })
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: 'Unable to compute rank' })
+  }
+})
+
 app.listen(4000, () => {
   console.log('API ready on http://localhost:4000')
 })
