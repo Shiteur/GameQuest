@@ -8,7 +8,8 @@
       <p>ID useur : {{ user.id }}</p>
       <p>Game Points : {{ user.GamePoints }}</p>
 
-      <input type="file" @change="updateAvatar" /> <br />
+      <button for="ChangeAvatar" id="label-file">Change Avatar</button>
+      <input id="ChangeAvatar" type="file"  @change="updateAvatar" /> <br />
       <button @click="logout">Logout</button>
       <button @click="deleteAccount">Delete this  account</button>
     </div>

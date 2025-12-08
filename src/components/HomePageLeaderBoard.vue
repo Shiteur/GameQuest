@@ -5,8 +5,10 @@
     <ul class="leaders" v-if="leaders.length">
       <li v-for="(user, index) in leaders" :key="user.id">
         <span class="rank">#{{ index + 1 }}</span>
+        <span class="img"><img :src="user.avatar" alt="Avatar" id="avatar" /></span>
         <span class="name">{{ user.username }}</span>
         <span class="points">{{ user.GamePoints }} pts</span>
+        
       </li>
     </ul>
     <p v-else class="empty">No players yet.</p>
