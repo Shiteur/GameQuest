@@ -54,9 +54,13 @@
       "email": "rayan.eid@outlook.fr",
       "password": "caca123",
       "avatar": "https://api.dicebear.com/9.x/identicon/svg?seed=caca1",
-      "GamePoints": 35,
+      "GamePoints": 150,
       "completedChallenges": [
-        11
+        11,
+        10,
+        12,
+        9,
+        102
       ]
     }
   ]

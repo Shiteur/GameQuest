@@ -15,7 +15,7 @@
             </ul>
         </div>
         <div class="sign">
-            <RouterLink v-if="!user" to="/login">Connection</RouterLink>
+            <RouterLink v-if="!user" to="/login">Sign in</RouterLink>
             <RouterLink v-else :to="`/profile/${user.id}`">{{ user.username }}</RouterLink>
         </div>
     </header>

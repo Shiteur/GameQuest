@@ -1,13 +1,15 @@
 <template>
     <section class="challenge">
         <h3>Challenges</h3>
-        <ChallengeCard
-          v-for="(challenge, index) in challenges"
-          :key="challenge.id || index"
-          :challenge="challenge"
-          :user="user"
-          @user-updated="onUserUpdated"
-        />
+        <div class="divchallenges">
+            <ChallengeCard
+            v-for="(challenge, index) in challenges"
+            :key="challenge.id || index"
+            :challenge="challenge"
+            :user="user"
+            @user-updated="onUserUpdated"
+            />
+        </div>
     </section>
 </template>
 

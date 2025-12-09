@@ -1,8 +1,10 @@
 <template>
   <div class="challenge-card">
-    <h4>{{ challenge.title }}</h4>
-    <p class="description">{{ challenge.description }}</p>
-    <p class="points">+{{ challenge.points }} Game Points</p>
+    <div class="pasbouton">
+      <h4>{{ challenge.title }}</h4>
+      <p class="description">{{ challenge.description }}</p>
+      <p class="points">+{{ challenge.points }} Game Points</p>
+    </div>
     <button
       class="btn"
       :disabled="isDisabled"

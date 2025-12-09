@@ -1,7 +1,7 @@
 <template>
   <section class="WeeklyChallenge">
-    <h2>Weakly Challenge </h2>
-    <p>Here all Challenge you can realase during this week.</p>
+    <h2>Weekly Challenge </h2>
+    <p>Here are every challenges for this week.</p>
     <div class="challenge-list">
       <ChallengeCard
         v-for="(challenge, index) in lastChallenges"
