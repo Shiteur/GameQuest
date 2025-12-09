@@ -1,7 +1,7 @@
 <template>
   <section class="PopularGame">
-    <h2>Popular Game</h2>
-    <p>You can fond the most popular game of Game Quest's user.</p>
+    <h2>Popular Games</h2>
+    <br/>
     <div class="games">
       <RouterLink
         v-for="(game, index) in firstGames"

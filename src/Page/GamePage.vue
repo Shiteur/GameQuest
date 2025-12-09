@@ -2,11 +2,13 @@
   <div v-if="loading" class="status">Loading game...</div>
   <div v-else-if="error" class="status error">{{ error }}</div>
   <div v-else-if="game">
-    <h2>{{ game.name }}</h2>
-    <section class="Descprtion">
-      <h3>Description</h3>
+
+      <h2 class="h2gamepage">{{ game.name }}</h2>
+
+    <section class="Description">
       <img :src="gameImage" :alt="`${game.name} cover`" />
       <div class="content">
+        <h3>Description</h3>
         <p>{{ game.description }}</p>
       </div>
     </section>

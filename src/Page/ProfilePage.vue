@@ -1,6 +1,6 @@
 <template>
   <section v-if="user">
-    <h2>Profil of {{ user.username }}</h2>
+    <h2 class="username">Profil of {{ user.username }}</h2>
 
     <div class="profile">
       <img v-if="user.avatar" :src="user.avatar" alt="Avatar" class="avatar"/>

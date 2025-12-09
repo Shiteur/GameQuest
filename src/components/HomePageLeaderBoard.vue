@@ -1,13 +1,14 @@
 <template>
   <section class="LeaderBoard">
-    <h2>Leader Board of the Week</h2>
-    <p>Here the Leader Board of Game Quest for {{ startWeek }} to {{ endWeek }}.</p>
+    <h2>Leaderboard of the Week</h2>
+    <p>Here the GameQuest's Leaderboard for {{ startWeek }} to {{ endWeek }}.</p>
     <ul class="leaders" v-if="leaders.length">
       <li v-for="(user, index) in leaders" :key="user.id">
         <span class="rank">#{{ index + 1 }}</span>
+        <span class="points">{{ user.GamePoints }} pts</span>
         <span class="img"><img :src="user.avatar" alt="Avatar" id="avatar" /></span>
         <span class="name">{{ user.username }}</span>
-        <span class="points">{{ user.GamePoints }} pts</span>
+
         
       </li>
     </ul>
