@@ -9,9 +9,10 @@
       <p>Game Points : {{ user.GamePoints }}</p>
       <p :class="rankClass">Rank : {{ userRank }}</p>
 
+      <button v-if="user.role==='admin'" @click="$router.push('/admin')">Admin Page</button> <br />
       <button for="ChangeAvatar" id="label-file">Change Avatar</button>
       <input id="ChangeAvatar" type="file"  @change="updateAvatar" /> <br />
-      <button @click="logout">Logout</button>
+      <button @click="logout">Logout</button> <br />
       <button @click="deleteAccount">Delete this  account</button>
     </div>
   </section>

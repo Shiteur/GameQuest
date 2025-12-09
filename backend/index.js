@@ -146,6 +146,30 @@ app.patch('/users/:id', async (req, res) => {
   }
 })
 
+app.patch('/users/:id/unvalidate/:challengeId', isAuthorized, async (req, res) => {
+  try {
+    const userId = req.params.id
+    const challengeId = Number(req.params.challengeId)
+
+    const data = await readUsers()
+    const user = data.users.find(u => u.id === userId)
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" })
+    }
+
+    // Remove the challengeId from completedChallenges
+    user.completedChallenges = (user.completedChallenges || []).filter(c => c !== challengeId)
+
+    await writeUsers(data)
+
+    res.json(user)
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: "Unable to unvalidate challenge" })
+  }
+})
+
 app.delete('/users/:id', isAuthorized, async (req, res) => {
   try {
     const data = await readUsers()
