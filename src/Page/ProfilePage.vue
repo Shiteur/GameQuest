@@ -99,8 +99,12 @@ export default {
 
       try { 
         await fetch(`http://localhost:4000/users/${this.user.id}`, {
-          method: 'DELETE'
+          method: 'DELETE',
+          headers: {
+            "X-User-Id": this.user.id   // Custom header to identify the user
+          }
         })
+
 
         localStorage.removeItem('currentUser')
         window.dispatchEvent(new Event('storage'))

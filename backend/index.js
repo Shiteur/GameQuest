@@ -6,8 +6,9 @@ import crypto from 'crypto'
 const app = express()
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'http://localhost:5173')
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, X-User-Id')
   res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS')
+  res.header('Access-Control-Expose-Headers', 'X-User-Id')
   if (req.method === 'OPTIONS') {
     return res.sendStatus(200)
   }
@@ -44,6 +45,30 @@ const readChallenges = async () => {
   return data.challenges || []
 }
 
+const isAuthorized = async (req, res, next) => {
+  const callerId = req.header("X-User-Id")   // user making the request
+  const targetId = req.params.id             // user to delete
+
+  if (!callerId) {
+    return res.status(401).json({ error: "Missing authentication" })
+  }
+
+  const data = await readUsers()
+  const caller = data.users.find(u => u.id === callerId)
+
+  if (!caller) {
+    return res.status(401).json({ error: "Invalid user" })
+  }
+
+  //  Authorization logic: user deletes his own account or user is ADMIN
+  if (callerId === targetId || caller.role === "admin") {
+    return next()
+  }
+
+  return res.status(403).json({ error: "Forbidden: insufficient rights" })
+}
+
+
 app.get('/health', (req, res) => {
   res.json({ status: 'ok' })
 })
@@ -77,7 +102,8 @@ app.post('/users', async (req, res) => {
       email,
       password,
       avatar: `https://api.dicebear.com/9.x/identicon/svg?seed=${username}`,
-      GamePoints: 0
+      GamePoints: 0,
+      role: 'user'
     }
 
     data.users.push(newUser)
@@ -120,16 +146,20 @@ app.patch('/users/:id', async (req, res) => {
   }
 })
 
-app.delete('/users/:id', async (req, res) => {
+app.delete('/users/:id', isAuthorized, async (req, res) => {
   try {
     const data = await readUsers()
     const initialLength = data.users.length
+
     data.users = data.users.filter(u => u.id !== req.params.id)
+
     if (data.users.length === initialLength) {
       return res.status(404).json({ error: 'User not found' })
     }
+
     await writeUsers(data)
     res.status(204).send()
+
   } catch (err) {
     console.error(err)
     res.status(500).json({ error: "Unable to delete user" })
