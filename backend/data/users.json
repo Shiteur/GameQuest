@@ -47,6 +47,17 @@
         8,
         9
       ]
+    },
+    {
+      "id": "1ab485a0-d32b-4a16-a194-81fd00c2f87e",
+      "username": "caca1",
+      "email": "rayan.eid@outlook.fr",
+      "password": "caca123",
+      "avatar": "https://api.dicebear.com/9.x/identicon/svg?seed=caca1",
+      "GamePoints": 35,
+      "completedChallenges": [
+        11
+      ]
     }
   ]
 }
