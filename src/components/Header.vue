@@ -22,8 +22,6 @@
 </template>
 
 <script>
-import '@/style/header.css'
-
 export default{
   name: "Header",
   data(){

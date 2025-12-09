@@ -22,8 +22,6 @@
 </template>
 
 <script>
-import '@/style/login.css'
-
 export default {
   name: 'LoginPage',
   data() {

@@ -1,9 +1,0 @@
-.home {
-  text-align: center;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  background: #0b0c10;
-  color: #e6f1ff;
-}

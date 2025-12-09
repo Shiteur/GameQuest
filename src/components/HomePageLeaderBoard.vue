@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import '@/style/leaderboard.css'
-
 export default {
   data() {
     return {

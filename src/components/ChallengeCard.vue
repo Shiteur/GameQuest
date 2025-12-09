@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import '@/style/challenge-card.css'
-
 export default {
   name: 'ChallengeCard',
   props: {
@@ -105,5 +103,4 @@ export default {
   }
 }
 </script>
-
 

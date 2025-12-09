@@ -16,8 +16,6 @@
 </template>
 
 <script>
-import '@/style/popular-game.css'
-
 export default {
   data() {
     return {

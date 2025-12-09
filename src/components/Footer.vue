@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import '@/style/footer.css'
 export default {}
 </script>
-
 

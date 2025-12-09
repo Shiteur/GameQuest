@@ -10,7 +10,6 @@
 import WeeklyChallenge from '../components/HomePageWeeklyChallenge.vue'
 import LeaderBoard from '../components/HomePageLeaderBoard.vue'
 import PopularGame from '../components/HomePagePopularGame.vue'
-import '@/style/home.css'
 
 export default {
     name: 'HomePage',

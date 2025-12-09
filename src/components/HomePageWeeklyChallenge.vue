@@ -17,7 +17,6 @@
 
 <script>
 import ChallengeCard from '@/components/ChallengeCard.vue'
-import '@/style/weekly-challenge.css'
 
 export default {
   components: { ChallengeCard },

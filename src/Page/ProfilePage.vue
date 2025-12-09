@@ -18,8 +18,6 @@
 </template>
 
 <script>
-import '@/style/profile.css'
-
 export default {
   name: "ProfileView",
   data() {

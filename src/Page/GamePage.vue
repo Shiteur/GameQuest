@@ -19,7 +19,6 @@
 import { computed, onMounted, watch, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import ChallengeListGame from '@/components/ChallengeListGame.vue'
-import '@/style/game-page.css'
 
 export default {
   name: 'GamePage',

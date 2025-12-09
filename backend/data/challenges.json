@@ -1,8 +1,8 @@
 {
     "challenges": [
-    { "id": 1, "game": "TeamfightTactics", "title": "Push over the end", "description": "Reach level 10 in a game.", "points": 5},
-    { "id": 2, "game": "TeamfightTactics", "title": "Unstoppable", "description": "Make three first place game in a row.", "points": 15},
-    { "id": 3, "game": "TeamfightTactics", "title": "One Cost Carry", "description": "Make a four-star champion without power up Final Form.", "points": 30},
+    { "id": 1, "game": "TeamFightTactics", "title": "Push over the end", "description": "Reach level 10 in a game.", "points": 5},
+    { "id": 2, "game": "TeamFightTactics", "title": "Unstoppable", "description": "Make three first place game in a row.", "points": 15},
+    { "id": 3, "game": "TeamFightTactics", "title": "One Cost Carry", "description": "Make a four-star champion without power up Final Form.", "points": 30},
     { "id": 4, "game": "TeamfightTactics", "title": "Unbeliveble", "description": "Make a three-star 5 cost champion.", "points": 35},
     { "id": 5, "game": "TeamfightTactics", "title": "Prisma Final", "description": "Make a prismatic trait.", "points": 35},
     { "id": 6, "game": "TeamfightTactics", "title": "Perfect Game", "description": "Make a perfect game (no losses).", "points": 40},

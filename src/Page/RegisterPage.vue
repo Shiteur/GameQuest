@@ -32,8 +32,6 @@
 </template>
 
 <script>
-import '@/style/register.css'
-
 export default {
     name: 'RegisterPage',
     data() {
