@@ -49,20 +49,20 @@ export default {
       try {
         const slug = route.params.slug
         if (!slug) {
-          error.value = 'Aucun jeu demandé.'
+          error.value = 'No game requested.'
           loading.value = false
           return
         }
 
         const res = await fetch(`http://localhost:4000/games?slug=${encodeURIComponent(slug)}`)
         if (!res.ok) {
-          error.value = res.status === 404 ? 'Jeu introuvable.' : 'Erreur lors du chargement du jeu.'
+          error.value = res.status === 404 ? 'Game not found.' : 'Error loading the game.'
           return
         }
         game.value = await res.json()
       } catch (err) {
         console.error(err)
-        error.value = 'Erreur réseau lors du chargement du jeu.'
+        error.value = 'Network error while loading the game.'
       } finally {
         loading.value = false
       }

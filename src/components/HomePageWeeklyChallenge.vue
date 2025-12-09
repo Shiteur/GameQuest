@@ -37,13 +37,13 @@ export default {
     try {
       const res = await fetch('http://localhost:4000/challenges')
       if (!res.ok) {
-        console.error('Impossible de charger les challenges')
+        console.error('Unable to load the challenges')
         return
       }
       const data = await res.json()
       this.challenges = Array.isArray(data) ? data : []
     } catch (err) {
-      console.error('Erreur réseau lors du chargement des challenges', err)
+      console.error('Network error while loading challenges', err)
     }
 
     const storedUser = localStorage.getItem('currentUser')

@@ -5,8 +5,10 @@
     <ul class="leaders" v-if="leaders.length">
       <li v-for="(user, index) in leaders" :key="user.id">
         <span class="rank">#{{ index + 1 }}</span>
+        <span class="img"><img :src="user.avatar" alt="Avatar" id="avatar" /></span>
         <span class="name">{{ user.username }}</span>
         <span class="points">{{ user.GamePoints }} pts</span>
+        
       </li>
     </ul>
     <p v-else class="empty">No players yet.</p>
@@ -38,7 +40,7 @@ export default {
       try {
         const res = await fetch('http://localhost:4000/users')
         if (!res.ok) {
-          console.error('Impossible de charger le classement')
+          console.error('Unable to load ranking')
           return
         }
         const users = await res.json()
@@ -47,7 +49,7 @@ export default {
           .sort((a, b) => b.GamePoints - a.GamePoints)
           .slice(0, 5)
       } catch (err) {
-        console.error('Erreur réseau lors du chargement du classement', err)
+        console.error('Network error while loading ranking', err)
       }
     },
     updateDate() {

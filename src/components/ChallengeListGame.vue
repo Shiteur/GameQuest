@@ -42,12 +42,12 @@ export default {
             try {
                 const ans = await fetch(`http://localhost:4000/challenges?game=${encodeURIComponent(this.game)}`)
                 if (!ans.ok) {
-                    console.error('Impossible de charger les défis')
+                    console.error('Unable to load the challenges')
                     return
                 }
                 this.challenges = await ans.json()
             } catch (err) {
-                console.error('Erreur réseau lors du chargement des défis', err)
+                console.error('Network error while loading challenges', err)
             }
         },
         onUserUpdated(updated) {
