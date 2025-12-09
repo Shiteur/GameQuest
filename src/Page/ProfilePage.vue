@@ -7,8 +7,10 @@
       <p>Email : {{ user.email }}</p>
       <p>ID useur : {{ user.id }}</p>
       <p>Game Points : {{ user.GamePoints }}</p>
+      <p :class="rankClass">Rank : {{ userRank }}</p>
 
-      <input type="file" @change="updateAvatar" /> <br />
+      <button for="ChangeAvatar" id="label-file">Change Avatar</button>
+      <input id="ChangeAvatar" type="file"  @change="updateAvatar" /> <br />
       <button @click="logout">Logout</button>
       <button @click="deleteAccount">Delete this  account</button>
     </div>
@@ -22,7 +24,8 @@ export default {
   name: "ProfileView",
   data() {
     return {
-      user: null
+      user: null,
+      userRank: null
     }
   },
   async created() {
@@ -35,8 +38,37 @@ export default {
     if (storedUser) {
       this.user = JSON.parse(storedUser)
     }
+
+    // Fond the rank if the user is loaded
+    if (this.user && this.user.id) {
+      this.fetchUserRank(this.user.id)
+    }
+  },
+  computed: {
+    rankClass() {
+      if (this.userRank === 1) return 'rank-first'
+      if (this.userRank === 2) return 'rank-second'
+      if (this.userRank === 3) return 'rank-third'
+      if (this.userRank <= 10) return 'rank-top10'
+    
+      return 'rank-other'
+    }
   },
   methods: {
+    async fetchUserRank(id) {
+      try {
+        const res = await fetch(`http://localhost:4000/users/${id}/rank`)
+        if (!res.ok) {
+          this.userRank = "N/A"
+          return
+        }
+        const data = await res.json()
+        this.userRank = data.rank
+      } catch (err) {
+        console.error("Error fetching rank:", err)
+        this.userRank = "N/A"
+      }
+    },
     async updateAvatar(event) {
       const file = event.target.files[0]
       if (!file) return

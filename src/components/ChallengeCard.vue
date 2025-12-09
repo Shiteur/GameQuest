@@ -84,7 +84,7 @@ export default {
         })
 
         if (!res.ok) {
-          alert('Impossible de valider le challenge pour le moment.')
+          alert('Unable to validate the challenge at this time.')
           return
         }
 
@@ -92,10 +92,10 @@ export default {
         localStorage.setItem('currentUser', JSON.stringify(updatedUser))
         this.completed = true
         this.$emit('user-updated', updatedUser)
-        alert(`Challenge "${this.challenge.title}" validé !`)
+        alert(`Challenge "${this.challenge.title}" validated!`)
       } catch (err) {
-        console.error('Erreur lors de la validation du challenge', err)
-        alert('Erreur réseau lors de la validation du challenge.')
+        console.error('Error while validating the challenge', err)
+        alert('Network error while validating the challenge.')
       } finally {
         this.submitting = false
       }

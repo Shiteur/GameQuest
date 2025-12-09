@@ -59,12 +59,12 @@ export default{
       try {
         const res = await fetch('http://localhost:4000/games')
         if (!res.ok) {
-          console.error('Impossible de charger la liste des jeux.')
+          console.error('Unable to load game list.')
           return
         }
         this.games = await res.json()
       } catch (err) {
-        console.error('Erreur reseau lors du chargement des jeux', err)
+        console.error('Network error while loading games', err)
       }
     },
     goToGame(game){
