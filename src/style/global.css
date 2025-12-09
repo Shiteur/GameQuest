@@ -282,11 +282,11 @@ header .sign a {
   color: #38bdf8;
 }
 
-    .LeaderBoard .img {
-      max-width: 40px;
-      min-width: 40px;
-      resize: both;
-    }
+.LeaderBoard #avatar {
+  max-width:  40px;
+  min-width: 40px;
+  resize: both;
+}
 
 /* Challenge card */
 
@@ -548,6 +548,10 @@ header .sign a {
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #38bdf8;
+}
+
+.profile input[type="file"] {
+  display: none;
 }
 
 .profile button {
