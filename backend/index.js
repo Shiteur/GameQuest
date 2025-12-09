@@ -56,9 +56,18 @@ const isAuthorized = async (req, res, next) => {
 
   const data = await readUsers()
   const caller = data.users.find(u => u.id === callerId)
+  const target = data.users.find(u => u.id === targetId)
 
   if (!caller) {
     return res.status(401).json({ error: "Invalid user" })
+  }
+
+  if (!target) {
+    return res.status(404).json({ error: "User not found" })
+  }
+
+  if (target.role === "admin") {
+    return res.status(403).json({ error: "Admins cannot be deleted" })
   }
 
   //  Authorization logic: user deletes his own account or user is ADMIN
