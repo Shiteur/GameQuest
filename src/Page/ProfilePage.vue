@@ -10,8 +10,8 @@
       <p :class="rankClass">Rank : {{ userRank }}</p>
 
       <button v-if="user.role==='admin'" @click="$router.push('/admin')">Admin Page</button> <br />
-      <button for="ChangeAvatar" id="label-file">Change Avatar</button>
-      <input id="ChangeAvatar" type="file"  @change="updateAvatar" /> <br />
+      <button @click="openChangeAvatar" id="label-file">Change Avatar</button>
+      <input ref="ChangeAvatar" id="ChangeAvatar" type="file"  @change="updateAvatar" /> <br />
       <button @click="logout">Logout</button> <br />
       <button @click="deleteAccount">Delete this  account</button>
     </div>
@@ -80,9 +80,10 @@ export default {
 
         await fetch(`http://localhost:4000/users/${this.user.id}`, {
           method: 'PATCH',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'X-User-Id': this.user.id },
           body: JSON.stringify({ avatar: this.user.avatar })
         })
+        localStorage.setItem("currentUser", JSON.stringify(this.user))
       }
       reader.readAsDataURL(file)
     },
@@ -115,6 +116,9 @@ export default {
         console.error("Error deleting account:", error)
         alert('An error occurred.')
       }
+    },
+    openChangeAvatar() {
+      this.$refs.ChangeAvatar.click()
     }
   }
 }
