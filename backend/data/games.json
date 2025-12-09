@@ -20,6 +20,104 @@
       
       "icon": "https://waytoomany.games/wp-content/uploads/2022/10/overwatch-2-cover.jpg",
       "description": "League of Legends (LoL) is a multiplayer online battle arena-type video game (MOBA) developed by Riot Games. Two teams of five players compete to destroy the opposing base by controlling champions with unique skills, by coordinating their actions and adapting their strategy in real time. The game stands out for its strategic depth, its regular updates and a global competitive scene. Free of access, LoL offers a wide variety of champions, of objects and roles to suit all styles of play."
+    },
+    {
+      "slug": "Tekken8",
+      "name": "Tekken 8",
+      
+      "icon": "https://gmedia.playstation.com/is/image/SIEPDC/tekken-8-keyart-01-en-15may23?$native$",
+      "description": "TEKKEN 8 is the latest addition to the TEKKEN series, the pinnacle of 3D fighting games. Join the fight with over 32 characters and bear witness to the next installment in this epic saga. Get ready for the biggest and best TEKKEN game ever made!"
+    },
+    {
+      "slug": "CrusaderKings3",
+      "name": "Crusader Kings 3",
+      "shortName": "CK3",
+      "icon": "https://shared.fastly.steamstatic.com/community_assets/images/items/1158310/03d22260acf609ab1cc38cd6b5287eeddfe08d56.jpg",
+      "description": "Love, fight, scheme, and claim greatness. Determine your noble house's legacy in the sprawling grand strategy of Crusader Kings III. Death is only the beginning as you guide your dynasty's bloodline in the rich and larger-than-life simulation of the Middle Ages."
+    },
+    {
+      "slug": "DirtyBomb",
+      "name": "Dirty Bomb",
+      
+      "icon": "https://cdn.gamekult.com/images/gallery/90/90533/dirty-bomb-pc-b1feb6f5.jpg",
+      "description": "Work together or die alone! Fight to restore peace to London or tear it down for profit in the most challenging team based shooter around."
+    },
+    {
+      "slug": "Paladins",
+      "name": "Paladins",
+      
+      "icon": "https://cdn1.epicgames.com/offer/badb0ee71b474ed591ec43212547cfc8/Paladins_EGS_BaseGame_2560x1440_2560x1440-99d0ed45c628c499ad600a52217b4123",
+      "description": "Paladins is the ultimate fantasy team-based shooter experience, with over 50 customizable Champions fighting in 5v5 action across a diverse Realm of modes and maps!"
+    },
+    {
+      "slug": "Minecraft",
+      "name": "Minecraft",
+      
+      "icon": "https://assets-prd.ignimgs.com/2021/12/14/minecraft-1639513933156.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80",
+      "description": "Explore randomly generated worlds and build amazing things from the simplest of homes to the grandest of castles. Play in creative mode with unlimited resources or mine deep into the world in survival mode, crafting weapons and armor to fend off the dangerous mobs. Scale craggy mountains, unearth elaborate caves, and mine large ore veins. Discover lush cave and dripstone cave biomes. Light up your world with candles to show what a savvy spelunker and master mountaineer you are!"
+    },
+    {
+      "slug": "CounterStrike2",
+      "name": "Counter-Strike 2",
+      "shortName": "CS2",
+      "icon": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/730/capsule_616x353.jpg?t=1749053861",
+      "description": "For over two decades, Counter-Strike has offered an elite competitive experience, one shaped by millions of players from across the globe. And now the next chapter in the CS story is about to begin. This is Counter-Strike 2."
+    },
+    {
+      "slug": "TeamFortress2",
+      "name": "Team Fortress 2",
+      "shortName": "TF2",
+      "icon": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/440/header.jpg?t=1757348372",
+      "description": "Nine distinct classes provide a broad range of tactical abilities and personalities. Constantly updated with new game modes, maps, equipment and, most importantly, hats! "
+    },
+    {
+      "slug": "RiskofRain2",
+      "name": "Risk of Rain 2",
+      
+      "icon": "https://riskofrain2.wiki.gg/images/1.0_Update.jpg?355134",
+      "description": "Escape a chaotic alien planet by fighting through hordes of frenzied monsters - with your friends, or on your own. Combine loot in surprising ways and master each character until you become the havoc you feared upon your first crash landing."
+    },
+    {
+      "slug": "FearAndHunger",
+      "name": "Fear and Hunger",
+      
+      "icon": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1002300/capsule_616x353.jpg?t=1621853752",
+      "description": "Fear & Hunger is a horror dungeon crawler set in the dark and hopeless dungeons of fear and hunger. The game is a hybrid of survival horror and dungeon crawler genres with its influences ranging from Silent Hill to Nethack. There are roguelike elements to the game as well as a heavy foundation of a j-RPG. "
+    },
+    {
+      "slug": "Valorant",
+      "name": "Valorant",
+      
+      "icon": "https://www.riotgames.com/darkroom/1440/d0807e131a84f2e42c7a303bda672789:3d02afa7e0bfb75f645d97467765b24c/valorant-offwhitelaunch-keyart.jpg",
+      "description": "Blend your style and experience on a global, competitive stage. You have 13 rounds to attack and defend your side using sharp gunplay and tactical abilities. And, with one life per-round, you'll need to think faster than your opponent if you want to survive. Take on foes across Competitive and Unranked modes as well as Deathmatch and Spike Rush."
+    },
+    {
+      "slug": "StreetFighter6",
+      "name": "Street Fighter 6",
+      "shortName": "SF6",
+      "icon": "https://image.api.playstation.com/vulcan/ap/rnd/202211/1408/l3bg7nmfPpPzam5jOVlaUFww.jpg",
+      "description": "Here comes Capcom's newest challenger! Street Fighter™ 6 launches worldwide on June 2nd, 2023 and represents the next evolution of the Street Fighter™ series! Street Fighter 6 spans three distinct game modes, including World Tour, Fighting Ground and Battle Hub."
+    },
+    {
+      "slug": "FinalFantasyXVI",
+      "name": "Final Fantasy XVI",
+      "shortName": "FFXVI",
+      "icon": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2515020/capsule_616x353.jpg?t=1741059170",
+      "description": "An epic dark fantasy where fates are decided by mighty Eikons and the Dominants who wield them. This is the tale of Clive Rosfield, a tragic warrior who swears revenge on the Dark Eikon Ifrit, a mysterious entity that leaves naught but calamity in its wake."
+    },
+    {
+      "slug": "PokemonXY",
+      "name": "Pokemon X and Y",
+      
+      "icon": "https://www.pokemon.com/static-assets/content-assets/cms2/img/video-games/_tiles/pokemon-xy/pokemon-xy-launch-169.jpg",
+      "description": "Your adventure takes place in the expansive Kalos region, where you'll explore cities, meet people, and encounter many Pokémon. Don't miss Lumiose City, the central hub of the region, where you'll return many times on your journey."
+    },
+    {
+      "slug": "SuperSmashBrosUltimate",
+      "name": "Super Smash Bros. Ultimate",
+      "shortName": "SSBU",
+      "icon": "https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_SuperSmashBrosUltimate_02_image1280w.jpg",
+      "description": "Super Smash Bros. Ultimate is a crossover fighting game for the Nintendo Switch where characters from Nintendo and other franchises battle to knock each other out of an arena. It is the fifth main game in the Super Smash Bros. series and includes every fighter from past games, along with several new ones."
     }
 
   ]
